@@ -8,10 +8,10 @@ body {
 }
 
 /*----------------------------------------------*/
-/* ---------------------------------------Header ----------------------------------------------------*/
-header {
+/* ---------------------------------------Header ---------------------------------------------------------*/
+header{
   display: inline-flex;
-  flex-flow: column;
+  flex-direction: column;
 }
 .titulo{
   margin: 29px 0 0 16px;
@@ -41,27 +41,23 @@ header {
   padding: 16px 16px 0 16px;
   font-size: 14px;
   line-height: 22px;
+  
 }
 .boton{
-  font-family: 'IBM Plex Mono', monospace;
   font-weight: 500;
   margin:36px 16px 24px 16px;
-  padding:13px 96px;
+  padding:13px 0;
   font-size: 16px;
   text-align: center;
   line-height: 22px;
   background: #00F3BB;
-  width: 288px;
-  border: unset;
   cursor: pointer;
+  text-decoration: none;
+  width: 288px;
 }
 .boton:hover{
   background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
   color: #ffffff;
-  border: 0;
-}
-.boton:checked{
-  border:0 ;
 }
 /*-------------------------------------------- NAVBAR -------------------------------------------------*/
 .navbar {
@@ -106,7 +102,7 @@ header {
   padding: 10px 0 0 16px;
   text-decoration: none;
 }
-/* ---------------------menu----------------- */
+/* -------------------------------------------------MENU--------------------------------------------------- */
 
 .navbar .menu {
   clear: both;
@@ -114,8 +110,7 @@ header {
   max-height: 0;
   transition: max-height .2s ease-out;
 }
-
-/*--------- menu icon -------------*/
+/*-------------------------------------------------MENU ICON------------------------------------------------*/
 
 .navbar .menu-icon {
   float: right;
@@ -124,7 +119,6 @@ header {
   justify-content: flex-end;
   padding: 21px 19px;
 }
-
 .navbar .menu-icon .navicon {
   background: #333;
   display: block;
@@ -133,7 +127,6 @@ header {
   transition: background .2s ease-out;
   width: 18px;
 }
-
 .navbar .menu-icon .navicon:before,
 .navbar .menu-icon .navicon:after {
   background: #333;
@@ -144,51 +137,40 @@ header {
   transition: all .2s ease-out;
   width: 100%;
 }
-
 .navbar .menu-icon .navicon:before {
   top: 5px;
 }
-
 .navbar .menu-icon .navicon:after {
   top: -5px;
 }
 
-/*------------- menu btn------- */
+/*----------------------------------------------------MENU BTN------------------------------------- */
 
 .navbar .menu-btn {
   display: none;
 }
-
 .navbar .menu-btn:checked ~ .menu {
   max-height: 224px;
 }
-
 .navbar .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
-
 .navbar .menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
-
 .navbar .menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
-
 .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
-
-/*----------------------------------------------*/
 /*---------------------------------------------------- Main ------------------------------------------------------*/
 
 /*---------------------------------------------------- Section Episodios------------------------------------------ */
 .episodes{
   position: relative;
-  background: #0000a3;
-  background: linear-gradient(225deg, #0000a3 100%, #0000ff 0%);
-  height:1203.5px ;
+  background: linear-gradient(90deg, #0000a3, #0000ff);
 } 
 svg.top-angle{
   position: absolute;
@@ -212,20 +194,26 @@ svg.down-angle{
   line-height: 42px;
   padding: 64px 147px 21px 16px;
 }
-.episodes .frames,.frames2{
-  width: 80vw;
-  border: none;
-  padding: 0.4% 3.4% 0.2%;
+.frames{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frames2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 iframe{
-  padding: 0.4% 3.4% 0.2%;
-  width: 80vw;
+  padding-bottom:11px;
   border: none;
+  width: 80vw;
 }
 #ruby{
   padding-bottom: 143.5px;
 }
-/*---------------------------------------------------- Section Imagen Celular-----------------------------TERMINADO */
+/*---------------------------------------------------- Section Imagen Celular-------------------------------------------- */
 .container_phone{
   display: flex;
   justify-content: center;
@@ -236,18 +224,17 @@ iframe{
 .container_phone img{  
   height: 519px;
 }
-/* ----------------------------------------------------Section De donde venimos----------------------------TERMINADO */ 
+/* ----------------------------------------------------Section De donde venimos-------------------------------------------- */ 
 .container_Venimos{
   display: flex;
-  flex-flow: column wrap;
+  flex-flow          : column wrap;
   margin-top: -95.5px;
 }
 #venimos{
-  font-family: 'IBMPlexSans', sans-serif;
+  font-family: 'IBM Plex Sans',sans-serif;
   font-size: 36px;
   font-weight: 400;
   color: #060A24;
-  letter-spacing: 0;
   line-height: 42px;
   width: 288px;
   padding: 27px 16px 8px ;
@@ -255,7 +242,6 @@ iframe{
 .texto{
   font-size: 14px;
   color: #060A24;
-  letter-spacing: 0;
   line-height: 22px;
   padding: 8px 16px;
 }
@@ -270,18 +256,14 @@ iframe{
   font-weight: 400;
   color: #060A24;
   line-height: 42px;
-  margin: 0 16px 14px;
+  margin: 10px 16px 14px;
 }
 .container_Invitados img{
   width: 100%;
   height: auto;
 }
-/*--------------------------------------------------- Section Algunos de nuestros temas------------------- */
-.container_Topicos{
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
+/*--------------------------------------------------- Section Algunos de nuestros temas------------------------------------- */
+
 #topicos{
   font-family: 'IBM Plex Sans',sans-serif;
   font-size: 36px;
@@ -293,6 +275,12 @@ iframe{
 .container_Topicos img{
   padding: 13px 108px;
 }
+.container_p div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center ;
+}
 .container_p p{
   font-family: 'IBM Plex Sans',sans-serif;
   font-weight: 600;
@@ -301,8 +289,9 @@ iframe{
   letter-spacing: 0;
   text-align: center;
   margin: 0 16px 36px;
+  width: 288px;
 }
-/*--------------------------------------------------- Section ¿Querés las últimas novedades? ---------------*/
+/*--------------------------------------------------- Section ¿Querés las últimas novedades? -------------------------------*/
 .containerNovedades{
   position: relative;
   display: flex;
@@ -334,40 +323,36 @@ svg.bot-angle{
   margin: 64px 16px 0;
 }
 .boton2{
-  font-family: 'IBM Plex Mono', monospace;
+  
   font-weight: 500;
   margin:36px 16px 67px 16px;
-  padding:13px 43px;
+  padding:13px 33px;
   font-size: 16px;
-  color: #060A24;
   line-height: 22px;
-  justify-self: center;
+  text-align: center;
   background: #00F3BB;
-  width: 288px;
-  border:0;
   cursor: pointer;
+  text-decoration:none;
 }
 .boton2:hover{
   background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
   color: #ffffff;
-  border: 0;
-  
 }
 /*----------------------------------------------*/
-/* ---------------------------------------Footer----------------------------------------------------------------- */
+/* --------------------------------------------------------------------Footer----------------------------------------------------- */
 footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
   footer p{
     font-size:  14px;
     color: #060A24;
     line-height: 22px;
     margin: 24px 46px 16px 47px;
     width: 227px;
-  }
+}
 .icons{
   display: flex;
   justify-content: space-between;
@@ -383,15 +368,15 @@ a:visited{
 a:hover{
   color:#00F3BB;
 }
-/*------------------------------------------MEDIA QUERY----------------------------------------------------------*/
+/*-----------------------------------------------------------------MEDIA QUERY----------------------------------------------------------*/
 
 @media only screen and (min-width: 48em) {
   
   /*----------------------------------------------*/
 /* ---------------------------------------Header ----------------------------------------------------*/
-header {
+header{
   display: inline-flex;
-  flex-flow: column;
+  flex-direction: column;
 }
 .titulo{
   margin: 120px 0 0 200px;
@@ -419,42 +404,42 @@ header {
   line-height: 24px;
   padding: 0;
 }
-a .boton{
+.boton{
   margin:0 0 5px 200px;
-  padding:16px 59px;
   font-size: 18px;
   line-height: 24px;
+  width: 226px;
 }
   /*------------------------------------- Navbar--------------------------------------------------------------- */
-  .navbar .logo{
-    width: 36px;
-    height: 36px;
-    padding: 22px 0 22px 100px;
+.navbar .logo{
+  width: 36px;
+  height: 36px;
+  padding: 22px 0 22px 100px;
   }
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
   }
-  .navbar li {
-    float: left;
+.navbar li {
+  float: left;
   }
-  .navbar li a {
-    padding: 26px 48px 26px 0;
-    font-size: 16px;
-    color: #060A24;
-    border: none;
+.navbar li a {
+  padding: 26px 48px 26px 0;
+  font-size: 16px;
+  color: #060A24;
+  border: none;
   }
  
-  .navbar .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-    background-color: white;
-    height: 80px;
+.navbar .menu {
+  clear: none;
+  float: right;
+  max-height: none;
+  background-color: white;
+  height: 80px;
   }
-  .navbar .menu-icon {
-    display: none;
+.navbar .menu-icon {
+  display: none;
   }
 /*----------------------------------------------*/
 /*---------------------------------------------------- Main ------------------------------------------------------*/
@@ -463,17 +448,17 @@ a .boton{
 .episodes{
   display: flex;
   flex-direction: column;
-  height: 1042.6px;
 }
 .episodes .frames{
-  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 26px 6.9% 72px 6.9%;
-  width: 85vw;
 } 
 .episodes .frames2{
-  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 0 6.9% 72px 6.9%;
-  width: 85vw;
+  align-items: unset;
 }
 #episodios{
   font-size: 48px;
@@ -482,6 +467,7 @@ a .boton{
 }
 iframe{
   padding: 0;
+  width: 85vw;
 }
 #ruby{
   padding-left: 72px;
@@ -506,8 +492,6 @@ iframe{
 }
 /* ----------------------------------------------------Section De donde venimos----------------------------TERMINADO */ 
 .container_Venimos{
-  display: flex;
-  flex-flow: column nowrap;
   margin-top: 0;
   align-self: baseline;
 }
@@ -544,9 +528,7 @@ iframe{
   top: -168.6px;
   margin-bottom: -168.6px;
 }
-.container_Topicos{
-  flex-flow: column wrap;
-}
+
 #topicos{
   font-size: 48px;
   margin: 64px 0 24px 200px;
@@ -562,6 +544,7 @@ iframe{
   flex-direction: row;
   align-items: center;
   justify-content: center ;
+  margin-left: 100px;
 }
 .container_p div{
   display: flex;
@@ -586,12 +569,11 @@ iframe{
   width: 692px;
   line-height: 62px;
 }
-a .boton2{
+.boton2{
   padding: 16px 59px;
   font-size: 18px;
   text-align: center;
   line-height: 24px;
-  width: 345px;
 }
 /*----------------------------------------------*/
 /* ---------------------------------------Footer----------------------------------------------------------------- */
